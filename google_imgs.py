@@ -11,6 +11,7 @@ def get_html(url, params=None):
     return r
 
 
+
 def get_content(html):
     soup = BeautifulSoup(html, 'html.parser')
     items = soup.find_all('div', class_='isv-r')
@@ -21,8 +22,8 @@ def get_content(html):
             more_items = next_item.find_all('div', class_='islir')
             for more_item in more_items:
                 tokens.append({
-                    'src': more_item.find_all('img')
-                    })
+                    'last_items': more_item.find_all('img', class_='rg_i')
+                })
     return tokens
 
 
