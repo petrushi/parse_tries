@@ -9,4 +9,3 @@ binary_data = a2b_base64(data)
 
 with open('image.' + file_ext, 'wb') as f:
     f.write(binary_data)
-    f.close()
